@@ -1,3 +1,5 @@
+An order system that lets user login and place orders at some selected restaurants.
+
 #################### Installation instructrions ####################
 
 1. You should have MongoDb installed on your computer.
