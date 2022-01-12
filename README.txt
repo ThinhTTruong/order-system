@@ -1,4 +1,4 @@
-Installation instructrions
+#################### Installation instructrions ####################
 
 1. You should have MongoDb installed on your computer.
 2. Start a first terminal, navigate to the project directory, run "mongod --dbpath='database'" to run MongoDB daemon.
@@ -7,14 +7,35 @@ Installation instructrions
 2. On the second terminal, in the same directory, run "npm start" to start the project's Node.js server on localhost:3000.
 3. Go to localhost:3000 on any browser to test the application (recommend Chrome).
 
+#################### Supported Routes ####################
 
-Design Choices
+GET/, GET/home: get the homepage
 
-1. I modify the given "database-initializer.js" file to use Mongoose instead of MongoDb.
-2. I create and use "orderform.pug" file instead of the given "orderform.html" file.
-3. The data for the three restaurants is only stored in the client-side Javascript.
-4. I use Pug as template engine for all the pages, with a partials header file to handle navigation header.
-5. I have 4 client-side Javascript files to handles on-click events for registration, logging in, orderform and user's private mode change.
-6. I have 2 additional routers to handle routes for /users and /orders, and the remaining routes are handled in server.js.
-7. I create models for user and order, and store users, orders and sessions in database.
+GET/login: get the login page
+
+POST/login: login the user to the server and get a session
+
+GET/logout: logout the user and destroy the session
+
+GET/register: get the sign-up page
+
+POST/register: sign up for new user, login to the server and get a session
+
+GET/users: get the page with all accessible users
+
+GET/users?name=userName: get the page with all the users that match the query
+
+GET/users/:userID: get the specified user information with the given user ID
+
+PUT/users/:userID: update the user information
+
+GET/orders: get the order form page
+
+POST/orders: submit order to server
+
+GET/orders/:orderID: get the specified order information with the given order ID
+
+
+
+
 
