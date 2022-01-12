@@ -1,0 +1,11 @@
+nav.nav1
+    .container 
+        a(href="/") Home
+        a(href="/users") Users
+        if session.loggedin
+            a(href="/orders") Place order 
+            a(href="/users/"+session.userId.toString()) #{session.username} profile
+            a(href="/logout") Logout 
+        else 
+            a(href="/login") Login
+            a(href="/register") Register

@@ -1,0 +1,14 @@
+html(lang="en")
+    head 
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Users Data
+        link(rel="stylesheet", href="/css/users.css")
+    body
+        include ./partials/header
+        div#main
+            h1 List of Users:
+            each user in users
+                a(href="/users/" + user._id.toString()) #{user.username}
+                br

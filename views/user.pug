@@ -1,0 +1,23 @@
+html(lang="en")
+    head 
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title User Info 
+        link(rel="stylesheet", href="/css/user.css")
+        script(src="/js/user.js" defer)
+    body 
+        include ./partials/header
+        script let curSession = !{JSON.stringify(session)}
+        #main
+            h1 Profile for #{user.username}
+            if session.loggedin 
+                p Set your private mode:
+                input#on(type='radio' name='private' value='on' checked=user.privacy==true)
+                label(for='on') On 
+                input#off(type='radio' name='private' value='off' checked=user.privacy==false)
+                label(for='off') Off
+            h3 Order history: 
+            each order in user.orders
+                a(href="/orders/" + order._id.toString()) #{order._id.toString()}
+                br

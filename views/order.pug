@@ -1,0 +1,21 @@
+html(lang="en")
+    head 
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Order Info 
+        link(rel="stylesheet", href="/css/order.css")
+    body 
+        include ./partials/header
+        #main
+            h1 Order# #{order._id.toString()}
+            p Buyer: #{order.user.username}
+            p Restaurant Name: #{order.restaurant}
+            p Order content: 
+                ul 
+                    each item in order.content 
+                        li= item.name + ' x ' + item.quantity
+            p Subtotal: $#{order.subtotal}
+            p Tax: $#{order.tax}
+            p Delivery Fee: $#{order.fee}
+            p Total: $#{order.total}

@@ -1,0 +1,23 @@
+html(lang="en")
+    head 
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title User Login
+        link(rel="stylesheet", href="/css/login.css")
+        script(src="/js/login.js" defer)
+    body 
+        include ./partials/header
+        .container1 
+            h2 User Login 
+            form
+                label(for='username') Username 
+                input#username(name='username' type='text')
+                p.error#nameError1 &times; Please enter an username!
+                p.error#nameError2 &times; Wrong username or password!
+                br
+                label(for='password') Password 
+                input#password(name='password' type='text')
+                p.error#passError1 &times; Please enter a password!
+                br
+                button#login(type='submit') Login
